@@ -1,0 +1,63 @@
+/**
+ * @description 解决 js 计算小数问题
+ * @param {number} num1 
+ * @param {number} num2 
+ * @returns {number}
+ */
+var add = function (num1, num2) {
+  // 将数字转换成字符串
+  var val1 = num1.toString()
+  var val2 = num2.toString()
+
+  // 获取小数点的位置
+  var index1 = val1.indexOf('.')
+  var index2 = val2.indexOf('.')
+
+  // 如果小数点存在，那么就再获取各自的小数位数
+  var ws1 = 0
+  var ws2 = 0
+  if (index1 != -1) {
+    ws1 = val1.split('.')[1].length
+  }
+  if (index2 != -1) {
+    ws2 = val2.split('.')[1].length
+  }
+
+  // 看谁的小数位数大，谁的小数位数小
+  var bigger = (ws1 > ws2) ? ws1 : ws2
+  var smaller = (ws1 < ws2) ? ws1 : ws2
+
+  // 计算得到需要补充的 0 的个数
+  var zerosCount = bigger - smaller
+
+  // 去除全部小数
+  val1 = val1.replace(',', '')
+  val2 = val2.replace(',', '')
+
+  // 比较 val1 和 val2 谁大，比较方法就是看谁是 smaller，是 smaller 的一方就补 0
+  if (ws1 == smaller) {
+    for (var i = 0; i < zerosCount; i++) {
+      val1 += '0'
+    }
+  } else {
+    for (var i = 0; i < zerosCount; i++) {
+      val2 += '0'
+    }
+  }
+
+  // 开始计算
+  var sum = parseInt(val1) + parseInt(val2)
+
+  // 根据最大的小数位数计算倍数
+  var beishu = 1
+  for (var i = 0; i < bigger; i++) {
+    beishu = beishu * 10
+  }
+  sum = sum / beishu
+
+  return sum
+}
+
+module.exports = {
+  add: add
+}

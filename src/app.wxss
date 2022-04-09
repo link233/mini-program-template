@@ -1,0 +1,8 @@
+/* 微信小程序里没有 HTML 标签，所以 base 无作用，在小程序里还会报错 */
+
+/* @tailwind base; */
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity))
+}
