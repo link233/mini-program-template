@@ -5,13 +5,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run dev:tailwind\" \"npm run dev:webpack\"",
+    "dev": "concurrently \"npm run dev:tailwind\" \"npm run lint\" \"npm run dev:webpack\"",
     "dev:webpack": "webpack --watch",
     "dev:tailwind": "tailwindcss -i ./tailwind/input.css -o ./src/app.wxss --watch",
     "build": "npm run build:tailwind && npm run build:webpack",
     "build:webpack": "webpack",
     "build:tailwind": "tailwindcss -i ./tailwind/input.css -o ./src/app.wxss --minify",
-    "lint": "eslint --ext .js --fix"
+    "lint": "eslint src --ext .js",
+    "lint:fix": "eslint src --ext .js --fix"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,9 @@
     "copy-webpack-plugin": "^10.2.4",
     "eslint": "^8.13.0",
     "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
     "sass": "^1.50.0",
     "tailwindcss": "^3.0.23",
     "webpack": "^5.72.0",
