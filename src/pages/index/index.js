@@ -4,7 +4,12 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World'
+    motto: 'Hello World',
+    theme: ''
   },
-  onLoad () {}
+  onLoad () {
+    this.setData({
+      theme: app.globalData.theme
+    })
+  }
 })

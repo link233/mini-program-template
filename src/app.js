@@ -14,5 +14,6 @@ App({
   },
   onThemeChange (e) {
     console.log(e)
+    this.globalData.theme = e.theme
   }
 })
