@@ -13,7 +13,7 @@ $ yarn build || npm run build
 
 ### package.json 配置
 
-```js
+```jsonc
 {
   "scripts": {
     // 先删除 './dist/' 文件夹，再使用 webpack 编译（但不支持 windows）
