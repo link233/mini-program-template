@@ -1,13 +1,30 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/my/my"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "demo",
     "navigationBarBackgroundColor": "@navBgColor",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"@navTxtStyle"
+    "navigationBarTextStyle": "@navTxtStyle"
   },
+  "tabBar": {
+    "color": "#b5b5b5",
+    "selectedColor": "#007aff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "renderer": "skyline",
+  "lazyCodeLoading": "requiredComponents",
   "darkmode": true,
   "themeLocation": "theme.json",
   "style": "v2",

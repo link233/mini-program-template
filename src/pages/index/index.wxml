@@ -3,7 +3,7 @@
 
 <view class="indexView {{ theme === 'dark' ? 'dark' : ''}}">
   <view class="usermotto">
-    <text class="user-motto text-red-600">{{motto}}</text>
+    <text class="user-motto text-red-600">{{ motto }}</text>
     <view>{{ util.add(0.2, 0.3) }}</view>
   </view>
 </view>
